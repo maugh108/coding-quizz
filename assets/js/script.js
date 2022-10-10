@@ -19,10 +19,6 @@ var questions = [["commonly used data types don't include (01):", ["strings", "b
   function clock() {
     time--;
     timerEl.textContent = time;
-    
-    if (time <= 0) {
-        return;
-        }
 
     }
 
@@ -47,6 +43,8 @@ var questions = [["commonly used data types don't include (01):", ["strings", "b
     var renderedquestion = questions[index]
     var renderedoptions = renderedquestion[1]
     var correctanswer = renderedquestion[2];
+
+    answersEl.innerHTML = "";
     
     questionEl.textContent = renderedquestion[0];
              
@@ -72,6 +70,7 @@ var questions = [["commonly used data types don't include (01):", ["strings", "b
        
           if (time < 0) {
             time = 0;
+            return;
           }
        
           timerEl.textContent = time;
